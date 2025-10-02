@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" role="img" aria-label="Game of Life favicon">
+    <!-- background -->
+    <rect width="32" height="32" fill="#0f172a"/>
+    <!-- row 0 -->
+    <rect x="12" y="2" width="8" height="8" rx="1" ry="1" fill="#10B981"/>
+    <!-- row 1 -->
+    <rect x="22" y="12" width="8" height="8" rx="1" ry="1" fill="#10B981"/>
+    <!-- row 2 -->
+    <rect x="2"  y="22" width="8" height="8" rx="1" ry="1" fill="#10B981"/>
+    <rect x="12" y="22" width="8" height="8" rx="1" ry="1" fill="#10B981"/>
+    <rect x="22" y="22" width="8" height="8" rx="1" ry="1" fill="#10B981"/>
+</svg>

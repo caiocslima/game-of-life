@@ -1,0 +1,44 @@
+services:
+  # Backend API Service
+  gameoflife-api:
+    container_name: gameoflife-api
+    build:
+      context: src/backend
+      dockerfile: Dockerfile
+    ports:
+      # Maps port 8080 on the host machine to port 80 in the container.
+      - "8080:80"
+    environment:
+      # Connection string pointing to the postgres service
+      - ConnectionStrings__GameOfLifeDb=Host=gameoflife-db;Port=5432;Database=gameoflife;Username=user;Password=password
+    depends_on:
+      - gameoflife-db
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  gameoflife-db:
+    image: postgres:15
+    container_name: gameoflife-db
+    environment:
+      POSTGRES_DB: gameoflife
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # Frontend UI
+  gameoflife-frontend:
+    container_name: gameoflife-frontend
+    build:
+      context: src/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - gameoflife-api
+
+volumes:
+  postgres_data:

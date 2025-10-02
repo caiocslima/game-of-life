@@ -1,0 +1,19 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root package for the Conway's Game of Life project.",
+  "scripts": {
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down",
+    "dev": "npm run dev --prefix src/frontend",
+    "build": "npm run build --prefix src/frontend",
+    "lint": "npm run lint --prefix src/frontend",
+    "test:backend": "dotnet test"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "src/frontend"
+  ]
+}

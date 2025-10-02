@@ -1,0 +1,181 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/caiocslima/GameOfLife/backend/tests/GameOfLife.Tests.csproj": {}
+  },
+  "projects": {
+    "/home/caiocslima/GameOfLife/backend/src/GameOfLife.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/caiocslima/GameOfLife/backend/src/GameOfLife.csproj",
+        "projectName": "GameOfLife",
+        "projectPath": "/home/caiocslima/GameOfLife/backend/src/GameOfLife.csproj",
+        "packagesPath": "/home/caiocslima/.nuget/packages/",
+        "outputPath": "/home/caiocslima/GameOfLife/backend/src/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/caiocslima/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/caiocslima/.dotnet/sdk/8.0.407/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/caiocslima/GameOfLife/backend/tests/GameOfLife.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/caiocslima/GameOfLife/backend/tests/GameOfLife.Tests.csproj",
+        "projectName": "GameOfLife.Tests",
+        "projectPath": "/home/caiocslima/GameOfLife/backend/tests/GameOfLife.Tests.csproj",
+        "packagesPath": "/home/caiocslima/.nuget/packages/",
+        "outputPath": "/home/caiocslima/GameOfLife/backend/tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/caiocslima/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/caiocslima/GameOfLife/backend/src/GameOfLife.csproj": {
+                "projectPath": "/home/caiocslima/GameOfLife/backend/src/GameOfLife.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.2, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/caiocslima/.dotnet/sdk/8.0.407/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
