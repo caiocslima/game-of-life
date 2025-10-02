@@ -17,7 +17,7 @@ class ApiError extends Error {
  * Centralized response handler to process API responses and errors consistently.
  * It parses the ProblemDetails JSON from our custom middleware.
  * @param {Response} response - The raw fetch response.
- * @returns {Promise<T>} The parsed JSON body.
+ * @returns {Promise} The parsed JSON body.
  * @throws {ApiError} If the response is not ok.
  */
 async function handleResponse<T>(response: Response): Promise<T> {
@@ -25,11 +25,9 @@ async function handleResponse<T>(response: Response): Promise<T> {
     return (await response.json()) as Promise<T>;
   }
 
-  // If the response is not ok, attempt to parse the error body for a detailed message.
   let errorMessage = `Request failed with status ${response.status}`;
   try {
     const errorBody = await response.json();
-    // Use the 'detail' from our backend_antigo's ProblemDetails object if available.
     errorMessage = errorBody.detail || errorMessage;
   } catch {
     // The body was not valid JSON, so we proceed with the generic status error.

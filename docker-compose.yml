@@ -6,13 +6,13 @@ services:
       context: src/backend
       dockerfile: Dockerfile
     ports:
-      # Maps port 8080 on the host machine to port 80 in the container.
       - "8080:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__GameOfLifeDb=${DB_CONNECTION_STRING}
       - CorsSettings__PolicyName=${CORS_POLICY_NAME}
-      - CorsSettings__AllowedOrigins=${CORS_ALLOWED_ORIGINS}
+      - CorsSettings__AllowedOrigins__0=${CORS_ALLOWED_ORIGIN_0}
+      - CorsSettings__AllowedOrigins__1=${CORS_ALLOWED_ORIGIN_1}
     depends_on:
       - gameoflife-db
     restart: unless-stopped
@@ -37,6 +37,8 @@ services:
     build:
       context: src/frontend
       dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL}
     ports:
       - "3000:80"
     depends_on:
