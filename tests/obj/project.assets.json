@@ -7373,12 +7373,13 @@
     },
     "GameOfLife/1.0.0": {
       "type": "project",
-      "path": "../backend/GameOfLife.csproj",
-      "msbuildProject": "../backend/GameOfLife.csproj"
+      "path": "../src/backend/GameOfLife.csproj",
+      "msbuildProject": "../src/backend/GameOfLife.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj",
       "GameOfLife >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "Moq >= 4.20.70",
@@ -7414,6 +7415,9 @@
           "projectReferences": {
             "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj": {
               "projectPath": "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj"
+            },
+            "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj": {
+              "projectPath": "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj"
             }
           }
         }
@@ -7477,5 +7481,16 @@
         "runtimeIdentifierGraphPath": "/home/caiocslima/.dotnet/sdk/8.0.407/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project '/home/caiocslima/GameOfLife/backend/GameOfLife.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

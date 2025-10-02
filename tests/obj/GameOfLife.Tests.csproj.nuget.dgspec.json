@@ -4,14 +4,14 @@
     "/home/caiocslima/GameOfLife/tests/GameOfLife.Tests.csproj": {}
   },
   "projects": {
-    "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj": {
+    "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj",
+        "projectUniqueName": "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj",
         "projectName": "GameOfLife",
-        "projectPath": "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj",
+        "projectPath": "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj",
         "packagesPath": "/home/caiocslima/.nuget/packages/",
-        "outputPath": "/home/caiocslima/GameOfLife/backend/obj/",
+        "outputPath": "/home/caiocslima/GameOfLife/src/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/caiocslima/.nuget/NuGet/NuGet.Config"
@@ -113,6 +113,9 @@
             "projectReferences": {
               "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj": {
                 "projectPath": "/home/caiocslima/GameOfLife/backend/GameOfLife.csproj"
+              },
+              "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj": {
+                "projectPath": "/home/caiocslima/GameOfLife/src/backend/GameOfLife.csproj"
               }
             }
           }
