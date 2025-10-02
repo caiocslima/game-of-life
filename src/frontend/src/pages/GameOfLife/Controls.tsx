@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { UseGameOfLifeReturn } from '@hooks';
 import { Button } from '@components';
 import { NUM_COLS, NUM_ROWS } from '@store';
-import { NumberInput } from '../../components/NumberInput.tsx';
+import { NumberInput } from '@components';
 
 type ControlsProps = UseGameOfLifeReturn;
 

@@ -1,16 +1,17 @@
 import { useGameOfLife } from '@hooks';
 import { Controls } from './Controls.tsx';
 import { GridDisplay } from './GridDisplay.tsx';
+import { BoardStability } from '@types';
 
 export const GameOfLife = () => {
   const { state, actions } = useGameOfLife();
 
   const getStatusText = () => {
     const baseText = `Generation: ${state.generation}`;
-    if (state.stability === 'Stable') {
+    if (state.stability === BoardStability.STABLE) {
       return `${baseText} (Stable)`;
     }
-    if (state.stability === 'Oscillator') {
+    if (state.stability === BoardStability.OSCILLATOR) {
       return `${baseText} (Oscillator)`;
     }
     return baseText;

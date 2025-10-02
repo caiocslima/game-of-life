@@ -11,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 var corsSettings = builder.Configuration.GetSection("CorsSettings").Get<CorsSettings>();
 if (corsSettings?.AllowedOrigins == null || corsSettings.AllowedOrigins.Length == 0)
 {
-    Console.Write(corsSettings);
     throw new InvalidOperationException("CORS settings are not configured correctly");
 }
 
@@ -49,7 +48,6 @@ var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
-// --- 2. Environment-Specific Configuration ---
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
