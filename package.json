@@ -7,8 +7,8 @@
     "docker:up": "docker compose up --build -d",
     "docker:down": "docker compose down",
     "dev": "npm run dev --prefix src/frontend",
-    "build": "npm run build --prefix src/frontend",
-    "lint": "npm run lint --prefix src/frontend",
+    "build:frontend": "npm run build --prefix src/frontend",
+    "lint:frontend": "npm run lint --prefix src/frontend",
     "test:backend": "cd tests && dotnet test"
   },
   "author": "",
