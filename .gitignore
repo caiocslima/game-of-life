@@ -1,0 +1,39 @@
+# =========================
+# General
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE specific files
+# =========================
+.idea/
+.vs/
+*.suo
+*.user
+
+# =========================
+# .NET / C#
+# =========================
+src/backend/bin/
+src/backend/obj/
+tests/bin/
+tests/obj/
+
+# =========================
+# Node.js / React
+# =========================
+src/frontend/node_modules/
+src/frontend/dist/
+src/frontend/build/
+src/frontend/.env.local
+src/frontend/logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Docker
+# =========================
+# The database volume should not be committed
+database/
