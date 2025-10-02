@@ -1,30 +1,36 @@
 using GameOfLife.Middleware;
-using GameOfLife.Models;
+using GameOfLife.Models.Configuration;
 using GameOfLife.Persistence;
 using GameOfLife.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Get CORS config
+var corsSettings = builder.Configuration.GetSection("CorsSettings").Get<CorsSettings>();
+if (corsSettings?.AllowedOrigins == null || corsSettings.AllowedOrigins.Length == 0)
+{
+    Console.Write(corsSettings);
+    throw new InvalidOperationException("CORS settings are not configured correctly");
+}
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactDev",
+    options.AddPolicy(corsSettings.PolicyName,
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000") // frontend origin
+            policy.WithOrigins(corsSettings.AllowedOrigins)
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
 });
 
-// Add services for API controllers
 builder.Services.AddControllers();
-
-// Add Swagger/OpenAPI for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Conway's Game of Life API",
         Version = "v1",
@@ -32,31 +38,31 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Configure EF Core with PostgreSQL
 var connectionString = builder.Configuration.GetConnectionString("GameOfLifeDb");
 builder.Services.AddDbContext<GameDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Register application services and repositories
 builder.Services.AddScoped<IGameOfLifeService, GameOfLifeService>();
 builder.Services.AddScoped<IBoardRepository, BoardRepository>();
 
 var app = builder.Build();
 
-// Use custom exception handling middleware for all environments
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
-// Enable Swagger UI only in development
-app.UseSwagger();
-app.UseSwaggerUI();
+// --- 2. Environment-Specific Configuration ---
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.UseCors("AllowReactDev");
+app.UseCors(corsSettings.PolicyName);
 
 app.UseHttpsRedirection();
 
 app.MapControllers();
 
-// Automatically apply database migrations on startup
+// Apply database migrations on startup
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<GameDbContext>();
