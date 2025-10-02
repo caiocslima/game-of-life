@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\backend\GameOfLife.csproj" />
     <ProjectReference Include="..\src\backend\GameOfLife.csproj" />
   </ItemGroup>
 

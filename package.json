@@ -9,7 +9,7 @@
     "dev": "npm run dev --prefix src/frontend",
     "build": "npm run build --prefix src/frontend",
     "lint": "npm run lint --prefix src/frontend",
-    "test:backend": "dotnet test"
+    "test:backend": "cd tests && dotnet test"
   },
   "author": "",
   "license": "ISC",
