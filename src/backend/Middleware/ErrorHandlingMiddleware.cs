@@ -53,7 +53,7 @@ public class ErrorHandlingMiddleware
                 title = "Board Not Found";
                 break;
             case NoFinalStateException _:
-                statusCode = StatusCodes.Status409Conflict;
+                statusCode = StatusCodes.Status422UnprocessableEntity;
                 title = "Could Not Determine Final State";
                 break;
         }
