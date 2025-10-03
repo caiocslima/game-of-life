@@ -54,7 +54,7 @@ In the project's root folder, you can use the following npm scripts to manage th
 ### Frontend
 - **Interactive Grid:** Clickable grid to draw patterns or generate random states.  
 - **Simulation Control:** Play/Pause, step forward, advance *n* generations, and detect final states.  
-- **Detailed State Display:** Shows current generation and final state notifications (Stable or Oscillator).  
+- **Detailed State Display:** Shows current generation and final state message (Stable or Oscillator).  
 - **Error Handling:** Displays clear error messages from the API.  
 
 ---
