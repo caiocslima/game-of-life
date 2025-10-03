@@ -42,21 +42,29 @@ In the project's root folder, you can use the following npm scripts to manage th
 * **Frontend (React \+ TypeScript):** UI to create, visualize, and interact with the Game of Life simulations.
 * **Database (PostgreSQL):** Database container to persist the state of the boards across sessions and application restarts.
 
-## **Key Features**
+# Key Features
 
-### **Backend**
+### Backend
+- **RESTful API:** Endpoints for creating boards, advancing generations, and detecting final states.  
+- **Persistence:** Board states are stored in PostgreSQL, surviving restarts.  
+- **Real-Time Streaming:** Server-Sent Events (SSE) endpoint (`/stream`) for continuous simulations without HTTP polling overhead.  
+- **Structured Error Handling:** Custom middleware returns errors in the `ProblemDetails` format.  
+- **Unit Tests:** Test suite with xUnit and Moq for reliable and maintainable logic.  
 
-* **RESTful API:** Clear endpoints for creating boards, advancing generations, and finding final states.
-* **Persistence:** The state of each board is saved in a PostgreSQL database, surviving restarts.
-* **Real-Time Streaming:** A Server-Sent Events (SSE) endpoint (/stream) for continuous simulations, avoiding the overhead of HTTP polling.
-* **Structured Error Handling:** Custom middleware returns errors in the ProblemDetails format.
-* **Unit Tests:** A test suite with xUnit and Moq to ensure the quality and reliability of the business logic.
+### Frontend
+- **Interactive Grid:** Clickable grid to draw patterns or generate random states.  
+- **Simulation Control:** Play/Pause, step forward, advance *n* generations, and detect final states.  
+- **Detailed State Display:** Shows current generation and final state notifications (Stable or Oscillator).  
+- **Error Handling:** Displays clear error messages from the API.  
 
-### **Frontend**
+---
 
-* **Interactive Grid:** A clickable grid to draw initial patterns, with also the possibility to create random initial states automatically.
-* **Full Simulation Control:** Buttons for Play/Pause, stepping forward one generation, advancing N generations, and finding the final state. Besides that, also includes a slider for speed control.
-* **Detailed State Display:** Shows the current generation number and informs the user when a final state (Stable or Oscillator) is reached.
-* **Error Handling:** Displays clear error messages from the API.
+# How It Works
 
-
+- **Play/Pause** → Starts or pauses continuous simulation.  
+- **Next** → Advances one generation.  
+- **Advance** → Advances *n* generations (default = 10).  
+- **Find Final** → Attempts up to *n* generations to detect a final state (default = 100).  
+- **Randomize** → Fills the board with random values and resets the counter.  
+- **Clear** → Clears the board and resets the counter.  
+- **Speed Slider** → Controls the speed of continuous simulation.
