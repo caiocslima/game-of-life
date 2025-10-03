@@ -32,9 +32,9 @@ public class GameOfLifeController : ControllerBase
     }
 
     [HttpGet("{id:guid}/advance")]
-    public async Task<IActionResult> GetNthState(Guid id, [FromQuery] int generationSteps = 1)
+    public async Task<IActionResult> GetNthState(Guid id, [FromQuery] int generations = 1)
     {
-        var board = await _gameOfLifeService.GetNthStateAsync(id, generationSteps);
+        var board = await _gameOfLifeService.GetNthStateAsync(id, generations);
         return Ok(board.ToStateResponse());
     }
     
